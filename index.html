@@ -14,13 +14,13 @@
 
 <body>
     <main>
-        
+
         <section>
             <!-- section container -->
-            <div class="flex justify-center items-center gap-5">
+            <div class="lg:flex justify-center h-[50vh] gap-5 container mx-auto px-4 ">
 
                 <!-- card container -->
-                <div class="grid grid-cols-3 gap-6 ">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
                     <!-- card 1 -->
                     <div class="text-center card shadow-md p-8 bg-lime-100 rounded-sm space-y-4">
                         <img src="images/Rectangle 4.png" alt="">
@@ -31,7 +31,7 @@
                     <div class="text-center card shadow-md p-8 bg-lime-100 rounded-sm space-y-4">
                         <img src="images/Rectangle 5.png" alt="">
                         <h3 class="text-2xl font-bold">Flower cactus</h3>
-                        <p class="text-lg font-semibold"> $<span>170</span></p>
+                        <p class="text-lg font-semibold"> $<span>20</span></p>
                     </div>
                     <!-- card 3 -->
                     <div class="text-center card shadow-md p-8 bg-lime-100 rounded-sm space-y-4">
@@ -39,28 +39,31 @@
                         <h3 class="text-2xl font-bold">Flower Rose</h3>
                         <p class="text-lg font-semibold"> $<span>180</span></p>
                     </div>
-                   
+
                 </div>
 
 
 
 
                 <!-- calculate container -->
-                <div>
+                <div class=" h-[100vh] lg:w-[60vh] mt-8 lg:mt-0">
+
                     <!-- discount cupon -->
-                    <div class="flex flex-col justify-center space-y-4 my-10 mb-6 bg-slate-400 p-10 rounded-sm">
+                    <div class="flex flex-col justify-center space-y-4 mb-2  bg-slate-400 p-8 rounded-sm">
                         <h3 class="text-2xl font-bold">Have Cupon ?</h3>
-                        <div class="flex justify-center">
-                            <input type="text" placeholder="type here.." class="bg-black  text-white rounded-lg w-[100%] outline-none">
-                            <button class="py-5 px-5  rounded-r-lg bg-red-400 text-white font-semibold translate-x-[-98%] hover:bg-green-400">Apply</button>
+                        <div class="flex justify-center w-[100%]">
+
+                            <input id="input-field" type="text" placeholder="type here.."
+                                class="bg-black  text-white rounded-lg w-full outline-none">
+
+                            <button id="apply-btn"
+                                class="py-3 px-3 rounded-r-lg bg-red-400 text-white font-semibold translate-x-[-98%] hover:bg-green-400">Apply</button>
                         </div>
 
                     </div>
 
-
-
                     <!-- calculate all -->
-                    <div class="bg-slate-400 p-10 rounded-sm">
+                    <div class="bg-slate-400 p-10 rounded-sm ">
 
                         <!-- price and title container -->
                         <div id="display-container">
@@ -71,15 +74,46 @@
                         <!-- calculate div -->
                         <hr>
                         <br>
-                        <p class="text-xl font-bold">TotalPrice : $</p>
-                        <p class="text-xl font-bold">DiscountPrice : $</p>
-                        <p class="text-xl font-bold">Total:$</p>
+                        <p class="text-xl font-bold">TotalPrice : <span id="total-price"></span> $ </p>
+                        <p class="text-xl font-bold">DiscountPrice : <span id="discount-price"></span> $</p>
+                        <p class="text-xl font-bold">Total: <span id="final-total"></span> $</p>
                         <br>
                         <hr>
-                        <div class="text-center my-2">
-                            <button class="btn w-full bg-red-400  text-white border-none">Make Purchase</button>
+                        <div class="text-center my-2 space-y-4">
+
+                            <!-- Open the modal using ID.showModal() method -->
+                            <div>
+                                <button class="btn w-full bg-red-400  text-white border-none"
+                                onclick="my_modal_5.showModal()">Make
+                                Purchase</button>
+                            <dialog id="my_modal_5"
+                                class="modal modal-bottom sm:modal-middle flex justify-center items-center ">
+                                <div class="modal-box lg:w-[30%] w-[80%] rounded-lg">
+
+                                    <div class="space-y-3 flex flex-col justify-center items-center">
+                                        <img src="images/checkmark-icon.gif" alt="">
+                                        <h3 class="text-2xl font-bold">Congratulations</h3>
+                                        <p class="text-lg font-medium">Your purchase the product</p>
+                                    </div>
+
+
+                                    <div class="modal-action flex justify-center items-center">
+                                        <form method="dialog">
+                                            <!-- if there is a button in form, it will close the modal -->
+                                            <button class="btn bg-red-300  font-semibold">Go Home</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </dialog>
+                            </div>
+                             
+                            <!-- reset button -->
+                            <button id="reset" class="btn w-full bg-red-400  text-white border-none">reset</button>
                         </div>
-                       
+
+
+
 
                     </div>
 
@@ -95,7 +129,11 @@
 
     </main>
 
- 
+
+
+   
+
+
     <!-- connect js script -->
     <script src="script/script.js"></script>
 </body>
