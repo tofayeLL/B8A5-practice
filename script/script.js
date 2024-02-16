@@ -64,6 +64,19 @@ applyButton.addEventListener('click', function () {
 // reset all option
 const reset = getAnyElementById('reset');
 reset.addEventListener('click', function () {
+    resetAllItem();
+})
+
+
+// go home button
+const homeButton = getAnyElementById('home-btn');
+homeButton.addEventListener('click', function () {
+    resetAllItem();
+})
+
+
+// reset all item function
+function resetAllItem() {
     const Price = getAnyElementById('total-price');
     Price.innerText = '';
     const displayContent = document.getElementById('display-container');
@@ -71,16 +84,16 @@ reset.addEventListener('click', function () {
     setInnerTextValue('discount-price', '');
     setInnerTextValue('final-total', '');
     getAnyElementById('input-field').value = '';
-})
+
+}
 
 
-
-
-
+// set inner text function
 function setInnerTextValue(id, value) {
     document.getElementById(id).innerText = value;
 }
 
+// get any element by use id function
 function getAnyElementById(id) {
     const element = document.getElementById(id);
     return element;
